@@ -13,6 +13,9 @@ public class Recipe {
     private String img_url;
     private String Description;
 
+    public Recipe() {
+    }
+
     public Recipe(String id, String name, String img_url, String description) {
         this.id = id;
         this.name = name;
