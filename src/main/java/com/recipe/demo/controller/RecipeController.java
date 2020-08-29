@@ -20,4 +20,11 @@ public class RecipeController {
         model.addAttribute("listRecipe", listRecipe);
         return "Recipe";
     }
+
+    @RequestMapping("/new")
+    public String addrecipe(Model model) {
+        Recipe recipe = new Recipe();
+        model.addAttribute("recipe", recipe);
+        return "add_recipe";
+    }
 }
