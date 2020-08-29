@@ -24,6 +24,7 @@
                 <td th:text="${recipe.name}">Name</td>
                 <td th:text="${recipe.img_url}"><img src="${recipe.img_url}"></td>
                 <td th:text="${recipe.description}">Description</td>
+                <td><a th:href="@{'/delete/' + ${recipe.id}}">Delete</a> </td>
             </tr>
         </tbody>
     </table>
