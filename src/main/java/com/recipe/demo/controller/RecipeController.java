@@ -5,7 +5,10 @@ import com.recipe.demo.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
@@ -26,5 +29,11 @@ public class RecipeController {
         Recipe recipe = new Recipe();
         model.addAttribute("recipe", recipe);
         return "add_recipe";
+    }
+
+    @PostMapping("/save")
+    public String saveRecipe(@ModelAttribute("recipe") Recipe recipe) {
+        service.save(recipe);
+        return "redirect:/";
     }
 }
